@@ -1,0 +1,17 @@
+/*{% load staticfiles %}*/
+
+body {
+    background-image: url('../images/bg_dots.png');
+    /*background-image:url(' static images/bg_subtle_dots.png ');*/
+
+}
+.content{
+    margin-top: 80px;
+}
+
+
+
+
+
+
+
