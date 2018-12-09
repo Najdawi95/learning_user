@@ -1,6 +1,30 @@
 <!DOCTYPE html>
 {% extends "user_app/base.html" %}
-{% block body_block%}
+{% block body_block %}
+{% load staticfiles %}
+
+<!-- Automatic Slideshow Images -->
+<div class="mySlides">
+    <img src="{% static 'images/slide1.jpg' %}" style="width:100%">
+    <div>
+        <h3>Los Angeles</h3>
+        <p><b>We had the best time playing at Venice Beach!</b></p>
+    </div>
+</div>
+<div class="mySlides">
+    <img src="{% static 'images/slide2.jpg' %}" style="width:100%">
+    <div>
+        <h3>New York</h3>
+        <p><b>The atmosphere in New York is lorem ipsum.</b></p>
+    </div>
+</div>
+<div class="mySlides">
+    <img src="{% static 'images/slide3.jpg' %}" style="width:100%">
+    <div>
+        <h3>Chicago</h3>
+        <p><b>Thank you, Chicago - A night we won't forget.</b></p>
+    </div>
+</div>
 
 <div class="jumbotron">
     <h1>Django level 5</h1>
@@ -18,4 +42,24 @@
     <h1>Django level 5</h1>
 </div>
 
-{% endblock%}
+// Automatic Slideshow - text style
+<style>
+.mySlides {display: none}
+</style>
+// Automatic Slideshow - change image every 4 seconds
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 4000);
+}</script>
+{% endblock %}
